@@ -2,14 +2,26 @@
 	<link rel="stylesheet" href="../static/style.css">
 	<div class="base">
 	<div class="left">
-	<img src="../static/profile_image.jpg" width="220">
-          <h1>Ilia Zanin</h1>
+	<img src={{ avatar }}  width="220" height="260">
+	<h1>{{ username }}</h1>
           <h3>Information Security Engineer</h3>
+	  <a href="/chpic">Change avatar</a>
+	  <p></p>
+	  <a href="chprofile">Update profile</a>
+	  <p></p>
+	  <a href="/chpass">Change password</a>
+	  <p></p>
+	  <a href="/logout">Log out</a>
 	</div>
 	<div class="right">
 	<p>Last modified: {{timestamp}}</p>
           <h2>Summary</h2>
-	  <p>Information security engineer mainly engaged in improving attack monitoring and incident prevention</p>
+	  <p>
+	  {% if summary is not none %}
+	  {{ summary }} 
+	  {% else %} 
+	  Information security engineer mainly engaged in improving attack monitoring and incident prevention
+	  {% endif %}</p>
         
           <h2>Work Experience</h2>
               <h3>Company A</h3>
